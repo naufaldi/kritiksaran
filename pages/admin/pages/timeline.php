@@ -26,9 +26,9 @@
     <!-- Logo -->
     <a href="../index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>S</b>KS</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Admin</b>SKS</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <!-- Header Navbar -->
@@ -47,7 +47,7 @@
               <!-- The user image in the navbar-->
               <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">Admin Jurusan</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -55,7 +55,7 @@
                 <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                  Admin Jurusan - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -89,7 +89,7 @@
           <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>Admin Jurusan</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -111,20 +111,9 @@
       <ul class="sidebar-menu">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li ><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li ><a href="../index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li><a href="pages/post.php"><i class="fa fa-clipboard"></i> <span>Create Post</span></a></li>
         <li class="active"><a href="pages/timeline.php"><i class="fa fa-address-card"></i> <span>Timeline</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -137,7 +126,7 @@
     <section class="content-header">
       <h1>
         Timeline
-        <small>example</small>
+       
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -156,7 +145,7 @@
             <!-- timeline time label -->
             <li class="time-label">
                   <span class="bg-red">
-                    10 Feb. 2014
+                    20 Desember 2016
                   </span>
             </li>
             <!-- /.timeline-label -->
@@ -167,7 +156,7 @@
               <div class="timeline-item">
                 <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
 
-                <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+                <h3 class="timeline-header"><a href="#">Naufaldi Rafif S</a> 14650068</h3>
 
                 <div class="timeline-body">
                   Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
@@ -189,7 +178,14 @@
               <div class="timeline-item">
                 <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
 
-                <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request</h3>
+              <h3 class="timeline-header"><a href="#">Naufaldi Rafif S</a> 14650068</h3>
+
+                <div class="timeline-body">
+                  Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                  weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                  jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                  quora plaxo ideeli hulu weebly balihoo...
+                </div>
               </div>
             </li>
             <!-- END timeline item -->
@@ -200,7 +196,7 @@
               <div class="timeline-item">
                 <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
 
-                <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
+                <h3 class="timeline-header"><a href="#">Jay White</a>13650001</h3>
 
                 <div class="timeline-body">
                   Take me to your leader!
@@ -216,48 +212,32 @@
             <!-- timeline time label -->
             <li class="time-label">
                   <span class="bg-green">
-                    3 Jan. 2014
+                 21 Desember 2016
                   </span>
             </li>
             <!-- /.timeline-label -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-camera bg-purple"></i>
+              <i class="fa fa-comments bg-yellow"></i>
 
               <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
+                <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
 
-                <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                <div class="timeline-body">
-                  <img src="http://placehold.it/150x100" alt="..." class="margin">
-                  <img src="http://placehold.it/150x100" alt="..." class="margin">
-                  <img src="http://placehold.it/150x100" alt="..." class="margin">
-                  <img src="http://placehold.it/150x100" alt="..." class="margin">
-                </div>
-              </div>
-            </li>
-            <!-- END timeline item -->
-            <!-- timeline item -->
-            <li>
-              <i class="fa fa-video-camera bg-maroon"></i>
-
-              <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>
-
-                <h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
+                <h3 class="timeline-header"><a href="#">Jay White</a>13650001</h3>
 
                 <div class="timeline-body">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs" frameborder="0" allowfullscreen></iframe>
-                  </div>
+                  Take me to your leader!
+                  Switzerland is small and neutral!
+                  We are more like Germany, ambitious and misunderstood!
                 </div>
                 <div class="timeline-footer">
-                  <a href="#" class="btn btn-xs bg-maroon">See comments</a>
+                  <a class="btn btn-warning btn-flat btn-xs">View comment</a>
                 </div>
               </div>
             </li>
             <!-- END timeline item -->
+          
+            
             <li>
               <i class="fa fa-clock-o bg-gray"></i>
             </li>

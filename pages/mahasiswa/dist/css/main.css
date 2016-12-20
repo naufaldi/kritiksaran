@@ -1,3 +1,36 @@
+/*Font */
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  padding-top: 10px;
+}
+p {
+  font-size: 14px;
+}
+p.small {
+  font-size: 10px;
+}
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+#mainNav{
+  background-color: #4078F9;
+  color: #fff;
+}
+.navbar-default{
+  border-color: #4078F9;
+  color: #fff;
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
 #body-timeline {
     padding-top: 50px;
 }
@@ -138,4 +171,50 @@ padding-left:90px;
 }
 .timeline-body > p + p {
   margin-top: 5px;
+}
+.timeline-panel{
+  background: #fff;
+  color: black;
+}
+section.timelinekritik{
+  background: #6D99FD;
+  color: white;
+}
+
+/*about*/
+hr.star-light:after,
+hr.star-primary:after {
+  content: "\f005";
+  font-family: FontAwesome;
+  display: inline-block;
+  position: relative;
+  top: -0.8em;
+  font-size: 2em;
+  padding: 0 0.25em;
+}
+hr.star-light {
+  border-color: black;
+}
+hr.star-light:after {
+  background-color: #fff;
+  color: black;
+}
+
+
+section.success {
+  background: #fff;
+  color: black;
+}
+@media (max-width: 767px) {
+  section {
+    padding: 75px 0;
+  }
+  section.first {
+    padding-top: 75px;
+  }
+}
+
+section#contact {
+  background: #6D99FD;
+  color: white;
 }

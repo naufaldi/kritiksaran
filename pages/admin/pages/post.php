@@ -26,9 +26,9 @@
     <!-- Logo -->
     <a href="../../index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>S</b>KS</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Admin</b>SKS</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
      <!-- Header Navbar -->
@@ -47,7 +47,7 @@
               <!-- The user image in the navbar-->
               <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">Admin Jurusan</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -55,7 +55,7 @@
                 <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                  Admin Jurusan - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -89,7 +89,7 @@
           <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>Admin Jurusan</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -107,23 +107,14 @@
       </form>
       <!-- /.search form -->
 
-      <!-- Sidebar Menu -->
+       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li ><a href="../index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li ><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="active"><a href="pages/post.php"><i class="fa fa-clipboard"></i> <span>Create Post</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li>
+        <li><a href="timeline.php"><i class="fa fa-id-card"></i> <span>Timeline</span></a></li>
+      </ul>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

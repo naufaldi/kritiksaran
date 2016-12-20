@@ -46,9 +46,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>S</b>KS</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Admin</b>SKS</span>
     </a>
 
     <!-- Header Navbar -->
@@ -67,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- The user image in the navbar-->
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">Admin Jurusan</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -75,8 +75,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  Admin Jurusan - Web Developer
+                
                 </p>
               </li>
              
@@ -108,7 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>Admin Jurusan</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -133,17 +133,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li><a href="pages/post.php"><i class="fa fa-clipboard"></i> <span>Create Post</span></a></li>
         <li><a href="pages/timeline.php"><i class="fa fa-id-card"></i> <span>Timeline</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -179,42 +168,63 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <th>No</th>
                   <th>Nama</th>
                   <th>NIM</th>
+                  <th>Judul</th>
                   <th>Kritik dan Saran</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
+                  <td>1</td>
+                  <td>Naufaldi</td>
+                  <td>14650068</td>
+                  <td> Tambah Koneksi</td>
+                  <td>Tolong untuk menambahkan kecepatan internet</td>
                   <td>
-                    <button class="btn btn-primary">Edit</button>
+                    <button class="btn btn-primary">Detail</button>
                     <button class="btn btn-warning">Delete</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5</td>
+                  <td>2</td>
+                  <td>Ahmad Roihan </td>
+                  <td>14650082</td>
+                  <td>Setiap Lab memiliki koneksi Wifi</td>
+                  <td>Akan lebih bagus jika setiap lab ada fasiltias wifi. Karena LAN untuk PC Lab</td>
                   <td> 
-                    <button class="btn btn-primary">Edit</button>
+                    <button class="btn btn-primary">Detail</button>
                     <button class="btn btn-warning">Delete</button>
                   </td>
                 </tr>
-                
+                <tr>
+                  <td>3</td>
+                  <td>Ahmad Roihan </td>
+                  <td>14650082</td>
+                  <td>Setiap Lab memiliki koneksi Wifi</td>
+                  <td>Akan lebih bagus jika setiap lab ada fasiltias wifi. Karena LAN untuk PC Lab</td>
+                  <td> 
+                    <button class="btn btn-primary">Detail</button>
+                    <button class="btn btn-warning">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Diko Andi Vindian  </td>
+                  <td>14650072</td>
+                  <td>Nilai UAS</td>
+                  <td>Nilai UAS Kapan keluar? dan Bagaiamna cara melihatnya?</td>
+                  <td> 
+                    <button class="btn btn-primary">Detail</button>
+                    <button class="btn btn-warning">Delete</button>
+                  </td>
+                </tr>
                 </tbody>
                 <tfoot>
-                <tr>
+                  <tr>
                   <th>No</th>
                   <th>Nama</th>
                   <th>NIM</th>
+                  <th>Judul</th>
                   <th>Kritik dan Saran</th>
                   <th>Action</th>
                 </tr>
