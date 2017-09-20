@@ -10,6 +10,7 @@ import Footer from '../../components/Footer/';
 //component
 import Dashboard from '../../views/Dashboard/';
 import Writes from '../../views/Blogs/Writes/';
+import Lists from '../../views/Blogs/Lists/';
 
 
 class Full extends Component {
@@ -25,6 +26,7 @@ class Full extends Component {
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
                 <Route path="/blogs/writes" name="Writes" component={Writes} />
+                <Route path="/blogs/lists" name="Lists" componen={Lists} />
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>
