@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Kritik and Saran Apps">
+    <meta name="author" content="Tim IT BINER 2014">
+    <meta name="keyword" content="Kritik and Saran Apps">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Kritik and Saran Apps</title>
+
+    <!-- Icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Main styles for this application -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<!-- BODY options, add following classes to body to change options
+
+// Header options
+1. '.header-fixed'					- Fixed Header
+
+// Sidebar options
+1. '.sidebar-fixed'					- Fixed Sidebar
+2. '.sidebar-hidden'				- Hidden Sidebar
+3. '.sidebar-off-canvas'		- Off Canvas Sidebar
+4. '.sidebar-minimized'			- Minimized Sidebar (Only icons)
+5. '.sidebar-compact'			  - Compact Sidebar
+
+// Aside options
+1. '.aside-menu-fixed'			- Fixed Aside Menu
+2. '.aside-menu-hidden'			- Hidden Aside Menu
+3. '.aside-menu-off-canvas'	- Off Canvas Aside Menu
+
+// Breadcrumb options
+1. '.breadcrumb-fixed'			- Fixed Breadcrumb
+
+// Footer options
+1. '.footer-fixed'					- Fixed footer
+
+-->
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+    <header class="app-header navbar">
+        <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">&#9776;</button>
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler sidebar-minimizer d-md-down-none" type="button">&#9776;</button>
+        <ul class="nav navbar-nav d-md-down-none">
+            <li class="nav-item px-3">
+                <a href="#" class="nav-link">Dashboard</a>
+            </li>
+            <li class="nav-item px-3">
+                <a href="#" class="nav-link">User</a>
+            </li>
+            <li class="nav-item px-3">
+                <a href="#" class="nav-link">Blog</a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img src="img/logo.png" class="img-avatar" alt="Ketua Jurusan">
+                    <span class="d-md-down-one"> Ketua Jurusan</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header text-center">
+                        <strong> Setting</strong>
+                    </div>
+                    <a href="#" class="dropdown-item"><i class="fa fa-user"></i>Profile</a>
+                    <a href="#" class="dropdown-item"><i class="fa fa-wrench"></i>Setting</a>
+                    <a href="#" class="dropdown-item"><i class="fa fa-lock"></i>Log Out</a>
+                </div>
+            </li>
+
+        </ul>
+    </header>
+
+    <div class="app-body">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="main.html"><i class="icon-speedometer"></i> Dashboard</a>
+                    </li>
+                    <!-- menu start here -->
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle"> <i class="icon-notebook"></i> Blog</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="blogs/all_post.html" class="nav-link"> <i class="icon-book-open"></i> All Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="blogs/new_post.html" class="nav-link"><i class="icon-note"></i>   New Post</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle"> <i class="icon-envelope"></i> Email</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="emails/write.html" class="nav-link"> <i class="icon-note"></i> Write</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="emails/inbox.html" class="nav-link"><i class="icon-book-open"></i>   Inbox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="emails/outbox.html" class="nav-link"><i class="fa fa-file-o"></i>   Outbox</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- menu end here -->
+
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main content -->
+        <main class="main">
+            <!-- Breadcumb -->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Home</li>
+                <li class="breadcrumb-item"><a href="#">Ketua Jurusan</a></li>
+                <li class="breadcrumb-item">Dashboard</li>
+            </ol>
+
+            <div class="container-fluid">
+
+                <div id="ui-view">
+
+                </div>
+            </div>
+            <!-- /.conainer-fluid -->
+        </main>
+
+
+    </div>
+
+    <footer class="app-footer">
+        <a href="http://coreui.io">CoreUI</a> &copy; 2017 creativeLabs.
+        <span class="float-right">Powered by <a href="http://coreui.io">CoreUI</a>
+        </span>
+    </footer>
+
+    <!-- Bootstrap and necessary plugins -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/popper.js/index.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/pace/pace.min.js"></script>
+
+
+
+    <!-- GenesisUI main scripts -->
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
