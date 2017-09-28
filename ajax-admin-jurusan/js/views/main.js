@@ -64,7 +64,7 @@ $(function(){
   };
   var ctx = $('#card-chart-pengunjung');
   var cardchartPengunjung = new Chart(ctx, {
-    type: 'line'/,
+    type: 'line',
     data: data,
     options: opt/ions
   });
@@ -286,7 +286,7 @@ $(function(){
       }
     },
   };
-  var ctx = $('#main-chart');
+  var ctx = $('#chart-pengunjung');
   var mainChart = new Chart(ctx, {
     type: 'line',
     data: data,
