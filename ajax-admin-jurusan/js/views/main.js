@@ -66,7 +66,7 @@ $(function(){
   var cardchartPengunjung = new Chart(ctx, {
     type: 'line',
     data: data,
-    options: opt/ions
+    options: options
   });
 
   var data = {
