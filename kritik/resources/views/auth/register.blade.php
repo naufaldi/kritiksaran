@@ -43,13 +43,16 @@
 
                         <div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
                             <label for="dob" class="col-md-4 control-label">Date Of Birth</label>
-
                             <div class="col-md-6">
-                               <input type="date" name="dob" class="form-control">
+                                <input id="dob" type="date" class="form-control" name="dob" value="{{ old('dob') }}" required>
 
-                               
-                                
+                                @if ($errors->has('dob'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('dob') }}</strong>
+                                    </span>
+                                @endif
                             </div>
+                            
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

@@ -15,24 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profile/{username}','ProfileController@profile');
-Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
-
-//Route::resource('articles','ArticleController');
-
-//Route::get('/home', 'HomeController@index')->name('home');
-
-
+Auth::routes();
 
 
 
 Route::group(['middleware'=>'auth'],function(){
-	Route::get('/home', 'HomeController@index')->name('home');	
-	Route::resource('articles','ArticleController');
-	Route::get('/profile/{username}','ProfileController@profile');
+Route::get('/profile/{username}','ProfileController@profile');
 
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('articles','ArticleController');
+
+		
 });
