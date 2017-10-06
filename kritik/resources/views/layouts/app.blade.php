@@ -38,8 +38,8 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{-- {{ config('app.name', 'Laravel') }} --}}
-                        SiKritik.Com
+                        {{ config('app.name', 'Laravel') }}
+                        
                     </a>
                 </div>
 
