@@ -10,6 +10,11 @@ class Admin extends Authenticatable
 {
     use Notifiable;
 
+    public function role()
+    {
+        return $this->belongsToMany(role::class,'role_admins');
+    }
+
     protected $guard = 'admin';
 
     /**
@@ -25,4 +30,5 @@ class Admin extends Authenticatable
      * @var array
      */
     
+
 }

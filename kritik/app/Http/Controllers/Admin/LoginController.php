@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +37,23 @@ class LoginController extends Controller
         $this->middleware('guest:admin')->except('logout');
     }
 
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        foreach ($this->guard()->user()->role as $role) {
+            if ($role->name == 'Admin') {
+                
+                return redirect('admin/home');
+            } elseif ($role->name == 'Ketua Jurusan') {
+                
+                return redirect('admin/kajur');
+            }
+        }
+    }
+
      public function showLoginForm()
     {
         return view('admin.login');
@@ -46,4 +63,6 @@ class LoginController extends Controller
     {
         return Auth::guard('admin');
     }
+
+
 }

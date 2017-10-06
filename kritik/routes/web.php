@@ -19,11 +19,11 @@ Route::get('/', function () {
 Auth::routes();
 Auth::routes();
 
-
+Route::get('admin/kajur','KajurController@index');
 Route::get('admin/home','AdminController@index');
 Route::get('admin','Admin\LoginController@showLoginForm')->name('admin.login');
 Route::post('admin','Admin\LoginController@login');
-Route::post('admin-password/email','Admin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+Route::post('admin-password/email','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.email');
 Route::get('admin-password/reset','												   Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
 
 Route::post('admin-password/reset','Admin\ResetPasswordController@reset')->name('admin.password/reset');
