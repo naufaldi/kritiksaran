@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
-use Auth;
 
 use Closure;
+use Auth;
 
-class KajurMiddleware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,15 +16,15 @@ class KajurMiddleware
      */
     public function handle($request, Closure $next)
     {
-        foreach (Auth::user()->role as $role) {
+         foreach (Auth::user()->role as $role) {
             
-            if ($role->name == 'Ketua Jurusan') {
+            if ($role->name == 'Admin TI') {
                 
                 return $next($request);
             }
         }
 
-    return redirect('');
+    return redirect('/');
         
     }
 }

@@ -44,7 +44,7 @@ class LoginController extends Controller
         $this->clearLoginAttempts($request);
 
         foreach ($this->guard()->user()->role as $role) {
-            if ($role->name == 'Admin') {
+            if ($role->name == 'Admin TI') {
                 
                 return redirect('admin/home');
             } elseif ($role->name == 'Ketua Jurusan') {

@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('username',32);
             $table->string('number_id',30);
+            $table->boolean('status_block')->default(1);
             $table->date('dob');
             $table->string('name');
             $table->string('email')->unique();
