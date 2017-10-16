@@ -62,8 +62,8 @@ $(function(){
       },
     }
   };
-  var ctx = $('#card-chart1');
-  var cardChart1 = new Chart(ctx, {
+  var ctx = $('#card-chart-pengunjung');
+  var cardchartPengunjung = new Chart(ctx, {
     type: 'line',
     data: data,
     options: options
@@ -286,7 +286,7 @@ $(function(){
       }
     },
   };
-  var ctx = $('#main-chart');
+  var ctx = $('#chart-pengunjung');
   var mainChart = new Chart(ctx, {
     type: 'line',
     data: data,
@@ -332,7 +332,7 @@ $(function(){
     }]
   };
   var ctx = $('#social-box-chart-1');
-  var socialBoxChart1 = new Chart(ctx, {
+  var socialBoxchartpengunjung = new Chart(ctx, {
     type: 'line',
     data: data1,
     options: options
@@ -434,7 +434,7 @@ $(function(){
     ]
   };
   var ctx = $('#sparkline-chart-1');
-  var sparklineChart1 = new Chart(ctx, {
+  var sparklinechartpengunjung = new Chart(ctx, {
     type: 'line',
     data: data1,
     options: options
