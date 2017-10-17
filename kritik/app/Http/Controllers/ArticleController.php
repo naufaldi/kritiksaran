@@ -9,6 +9,7 @@ use App\Article;
 use App\Tes;
 
 use Auth;
+use App\User;
 
 use DB;
 
@@ -27,11 +28,13 @@ class ArticleController extends Controller
          //return Tes::all();
         //$tes = Tes::all();
        // $articles = DB::table('articles');
+        $id_user = Auth::id();
+        $fotos =   User::findOrFail($id_user);
         $articles = Article::orderBy('id','desc')->paginate(10);
        // $articles = Article::onlyTrashed()->paginate(10); //untuk menampilkan artikel yang sudah dihapus
        // $articles = Article::all();
          //$articles = DB::table('articles')->get();
-        return view('articles.index',compact('articles'));
+        return view('articles.index',compact('articles','fotos'));
     }
 
     /**
@@ -86,7 +89,7 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {   
         $article = Article::findOrFail($id);
         return view('articles.show',compact('article'));
     }
@@ -126,6 +129,7 @@ class ArticleController extends Controller
 
 
     }
+
 
     /**
      * Remove the specified resource from storage.

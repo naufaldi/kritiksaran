@@ -4,7 +4,9 @@
 
 <div class="row">
 
-	@forelse($articles as $article)
+	@forelse($articles as $article )
+
+		
 			<div class="col-md-6 col-md-offset-3">
 			
 			<div class="panel panel-default">
@@ -15,12 +17,22 @@
 					<span class="pull-right">{{$article->created_at->diffForHumans()}}</span>
 
 				</div>
+				
 
 				<div class="panel-body">
-					
-				 {{$article->ShortContent}}	
+					<div class="row">
+						<div class="col-md-2">
+							<img src="{{"https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=mm"}}" alt="" class="img-responsive">
+						</div>
+						<div class="col-md-8">
+						
+						<p>{{$article->ShortContent}}</p>
 
-				 <a href="/articles/{{ $article->id }}">Read More</a>
+				 		<a href="/articles/{{ $article->id }}">Read More</a>	
+					</div>
+					</div>
+					
+				 
 
 				</div>
 
@@ -40,7 +52,8 @@
 					</form>
 
 					@endif
-					<i class="fa fa-thumbs-o-up pull-right " aria-hidden="true"></i>
+					<button class="btn btn-success btn-xs"><i class="fa fa-thumbs-up " aria-hidden="true"></i>Like Suggest</button>
+					
 
 
 				</div>
