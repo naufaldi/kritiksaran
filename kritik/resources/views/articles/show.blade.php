@@ -12,7 +12,17 @@
 					
 					<span> Article By User {{$article->user_id}} </span>
 
-					<small><a href="/articles/{{$article->id}}/edit">Edit</a></small>
+					<small>
+
+					@if($article->user_id==Auth::id())
+					<a class="fa fa-edit" href="/articles/{{$article->id}}/edit">Edit</a></small>
+
+					@else
+						
+					
+
+					@endif
+
 
 					<span class="pull-right"> 
 

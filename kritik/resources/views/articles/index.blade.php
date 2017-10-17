@@ -3,6 +3,42 @@
 @section('content')
 
 <div class="row">
+  {{-- {!!Form::text('nama_lengkap',null,['class'=>'form-controll'])!!} --}}
+<div class="col-md-6 col-md-offset-3"> 
+{!! Form::open() !!}
+<div class="panel panel-info">
+<div class="panel-heading"> Add New Suggest</div>
+  <div class="panel-body">
+  	<label>Write your suggest</label>
+  {{-- <form action="/articles" method="POST">
+   {{csrf_field()}} --}}
+   
+    <input type="hidden" name="user_id" value={{ Auth::user()->id}}>
+  	<textarea class="form-control" name="content" id="content"></textarea>
+  	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="live">For Public</label>
+	</div>
+
+	<div class="form-group">
+		<label for="post_on">Post On</label>
+				<input type="datetime-local" name="post_on" class="form-control">
+	</div>
+
+
+
+
+  </div>
+	<div class="panel-footer clearfix">
+		<button type="submit" value="Post" class="btn btn-success pull-right btn-sm"><i class="fa fa-plus"></i>Add Suggest</button>
+	</div>
+	
+	{{-- </form> --}}
+  </div>
+  {!! Form::close() !!}
+ </div>
+  
+
 
 	@forelse($articles as $article )
 
