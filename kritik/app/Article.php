@@ -10,12 +10,21 @@ class Article extends Model
     use SoftDeletes;
     protected $fillable = [
 
-    	'user_id','content','live','post_on'
+    	'user_id','content','live','post_on','article_id'
 
 
     ];
 
-    protected $dates = ['post_on','deleted_at'];
+    protected $dates = ['deleted_at'];
+
+    public $timestamps = true;
+    protected $table = 'articles';
+    // protected $guarded = ['article_id'];
+
+    public function comments()
+    {
+        return $this->hasMany(Statuscomments::class);
+    }
 
     public function setLiveAttribute($value)
     {
@@ -27,8 +36,9 @@ class Article extends Model
     	 return substr($this->content,0,random_int(60,150)).'...';
     }
 
-    public function setPostOnAttribute($value)
-    {
-        $this->attributes['post_on'] = Carbon::parse($value);
-    }
+    // public function setPostOnAttribute($value)
+    // {
+    //     $this->attributes['post_on'] = Carbon::parse($value);
+    // }
 }
+

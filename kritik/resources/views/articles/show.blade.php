@@ -15,7 +15,7 @@
 					<small>
 
 					@if($article->user_id==Auth::id())
-					<a class="fa fa-edit" href="/articles/{{$article->id}}/edit">Edit</a></small>
+					<a class="fa fa-edit" href="/articles/{{$article->article_id}}/edit">Edit</a></small>
 
 					@else
 						

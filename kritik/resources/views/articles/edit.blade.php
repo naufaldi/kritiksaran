@@ -34,19 +34,21 @@
 						 	For Public
 						 	</label>
 
+						 	
+
 						 </div>
 
 						 <div class="form-group">
 						 	
-							<label for="post_on">Post On</label>
-							<input type="datetime-local" name="post_on" class="form-control" value="{{$article->post_on->format('Y-m-d\TH:i:s')}}">
+							{{-- <label for="post_on">Post On</label> --}}
+							<input type="hidden" name="post_on" class="form-control" value="{{$article->post_on}}">
 
 
 
 						 </div>
 
 					</div>
-					<input type="submit" class=" btn btn-success pull-right" value="Post">
+					<input type="submit" class=" btn btn-success pull-right" value="Update">
 					<a href="articles/"><button class="btn btn-success">Back to Feeds</button></a>
 
 					</form>

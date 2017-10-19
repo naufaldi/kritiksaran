@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Article;
 
-use App\Tes;
+
 
 use Auth;
 use App\User;
-
+use App\Statuscomments;
 use DB;
 
 
@@ -29,12 +29,23 @@ class ArticleController extends Controller
         //$tes = Tes::all();
        // $articles = DB::table('articles');
         $id_user = Auth::id();
+        $article_id = Article::all(['article_id']); 
         $fotos =   User::findOrFail($id_user);
-        $articles = Article::orderBy('id','desc')->paginate(10);
+        $articles = Article::orderBy('article_id','desc')->paginate(10);
+
+
+        
+
+       
+        
+        // $comments = Statuscomments::where('article_id',502)->get();
        // $articles = Article::onlyTrashed()->paginate(10); //untuk menampilkan artikel yang sudah dihapus
        // $articles = Article::all();
          //$articles = DB::table('articles')->get();
-        return view('articles.index',compact('articles','fotos'));
+        $tanggal = date('l jS \of F Y h:i:s A');
+         return view('articles.index',compact('articles','fotos','tanggal'));
+        //return $article_id;
+         
     }
 
     /**
@@ -61,7 +72,7 @@ class ArticleController extends Controller
         // $article->content = $request->content;
         // $article->post_on = $request->post_on;
         // $article->live = (boolean)$request->live;
- $create= Article::create($request->all());
+        $create= Article::create($request->all());
 
         if ($create) {
             
@@ -90,7 +101,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {   
-        $article = Article::findOrFail($id);
+        
+        $article = Article::where('article_id',$id)->firstOrFail();//filter unutuks spesifi kolom
         return view('articles.show',compact('article'));
     }
 
@@ -102,7 +114,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {   
-        $article = Article::findOrFail($id);
+        $article = Article::where('article_id',$id)->firstOrFail();
        return view('articles.edit',compact('article'));
     }
 
@@ -117,12 +129,12 @@ class ArticleController extends Controller
     {
 
         $article = Article::findOrFail($id);
-        if(!isset($request->live))
-             $article->update(array_merge($request->all(),['live'=>false]));
+        if(isset($request->live))
+             $article->update(array_merge($request->all(),['live'=>1]));
         
 
         else
-            $article->update($request->all());
+            $article->update(array_merge($request->all(),['live'=>0]));
         
        
         return redirect('/articles');

@@ -20,7 +20,9 @@
 						<div class="form-group">
 						<input type="hidden" name="user_id" value={{ Auth::user()->id}}>
 						<label for="content">Content</label>
-						 <textarea name="content" class="form-control"></textarea>
+						 <textarea name="content" class="form-control"></textarea>	
+
+						 <input type="hidden" name="article_id" value={{rand(1,1000)}}>
 
 						 <div class="checkbox">
 						 	<label>
