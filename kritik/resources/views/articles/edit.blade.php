@@ -15,7 +15,7 @@
 				</div>
 
 				<div class="panel-body">
-					<form action="/articles/{{$article->id}}" method="POST">
+					<form action="/articles/{{$article->article_id}}" method="POST">
 
 					{{method_field('PUT')}}
 					{{csrf_field()}}

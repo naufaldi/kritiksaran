@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Article;
+use Illuminate\Support\Facades\Input;
 
 
 
@@ -93,6 +94,37 @@ class ArticleController extends Controller
 
     }
 
+
+    public function comment(Request $request)
+    {
+        if (Input::has('post_comment')) {
+            
+            $status = Input::get('post_comment');
+            $commentBox = Input::get('comment_text');
+            $selectedStatus = Article::find($status);
+
+
+            // $selectedStatus->comments()->create([
+
+            //     'comment_text'=>$commentBox,
+            //     'user_id'=>Auth::user()->id,
+            //     'article_id'=>$status
+
+            //     ]);
+
+
+             Statuscomments::create([
+
+                'comment_text'=>$commentBox,
+                'user_id'=>Auth::user()->id,
+                'article_id'=>$status
+
+                ]);
+            
+            return redirect('/articles');
+        }
+    }
+
     /**
      * Display the specified resource.
      *
@@ -102,7 +134,7 @@ class ArticleController extends Controller
     public function show($id)
     {   
         
-        $article = Article::where('article_id',$id)->firstOrFail();//filter unutuks spesifi kolom
+        $article = Article::where('article_id',$id)->first();//filter unutuks spesifi kolom
         return view('articles.show',compact('article'));
     }
 
@@ -114,7 +146,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {   
-        $article = Article::where('article_id',$id)->firstOrFail();
+        $article = Article::find($id);
        return view('articles.edit',compact('article'));
     }
 

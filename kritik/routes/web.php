@@ -24,6 +24,7 @@ Route::get('admin/test','KajurController@akes_admin');
 Route::get('admin/home','AdminController@index');
 Route::get('admin','Admin\LoginController@showLoginForm')->name('admin.login');
 Route::post('admin','Admin\LoginController@login');
+
 // Route::post('admin-password/email','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.email');
 // Route::get('admin-password/reset','												   Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
 
@@ -38,6 +39,7 @@ Route::get('/profile/{username}','ProfileController@profile');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('articles','ArticleController');
+Route::post('articles/comments','ArticleController@comment');
 
 		
 });

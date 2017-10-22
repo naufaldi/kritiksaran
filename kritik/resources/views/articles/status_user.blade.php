@@ -45,15 +45,16 @@
 			 </div>	
 				<div class="panel-footer clearfix" style="background-color: white">	
 
-					{{Form::open()}}
+					{{Form::open(array('url'=>'articles/comments'))}}
 					{{Form::hidden('post_comment',$article->article_id)}}
 
 					<div class="input-group">
-      					<input type="text" class="form-control" placeholder="Your Comment" name="comment_text">
+      					<input type="text" class="form-control" placeholder="Your Comment" name="comment_text" id="comment_text">
       					<span class="input-group-btn">
         					<button class="btn btn-default"  type="submit"><i class="fa fa-send"></i> </button>
       					</span>
     				</div>
+    				<br>
 
 					{{Form::close()}}
 
@@ -63,7 +64,27 @@
 					    		
 					    		@foreach($comments as $c)
 									
-									{{$c->comment_text}}
+									
+									<blockquote style="font-size:13px;">
+										<div class="row">
+											<div class="col-md-1">
+												<img src="{{"https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=mm"}}"  class="img-responsive">
+											</div>
+
+											<div class="col-md-11">
+												<ul class="list-inline list-unstyled">
+													<li>
+														<a href="">{{\App\User::find($c->user_id)->name}}</a>
+													</li>
+													<li>
+														posted {{$c->created_at->diffForHumans()}}
+													</li>
+												</ul>
+												<p>{{$c->comment_text}}</p>
+											</div>
+										</div>
+									</blockquote>
+									
 
 					    		@endforeach
 
@@ -75,6 +96,9 @@
 					@if($article->user_id == Auth::id())
 					<form action="/articles/{{$article->article_id}}" method="POST" class="pull-right" style="margin-left: 25px">
 
+					{{-- {{Form::open()}}
+					{{Form::hidden('/articles/{{$article->article_id}}')}} --}}
+
 					{{csrf_field()}}
 					{{method_field('DELETE')}}
 						
@@ -82,6 +106,7 @@
 							Delete
 						</button>
 					</form>
+					{{-- {{Form::close()}} --}}
 					@endif
 				</div>
 			</div>

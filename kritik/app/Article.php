@@ -10,12 +10,13 @@ class Article extends Model
     use SoftDeletes;
     protected $fillable = [
 
-    	'user_id','content','live','post_on','article_id'
+    	'user_id','content','live','post_on'
 
 
     ];
 
     protected $dates = ['deleted_at'];
+    protected $primaryKey = 'article_id';
 
     public $timestamps = true;
     protected $table = 'articles';

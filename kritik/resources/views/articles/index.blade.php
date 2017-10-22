@@ -21,7 +21,7 @@
 	</div>
 
 	<div class="form-group">
-				<input type="hidden" name="article_id" value={{rand(1,1000)}}>
+				{{-- <input type="hidden" name="article_id" value={{rand(1,1000)}}> --}}
 		
 				<input type="hidden" name="post_on" class="form-control" value="{{$tanggal}}">
 	</div>
