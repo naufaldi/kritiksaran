@@ -31,13 +31,24 @@
 								<button type="submit" class="btn btn-success btn-xs"data-toggle="collapse" data-target="#view-comments-{{$article->article_id}}" aria-expanded="false" aria-controls="view-comments-{{$article->article_id}}"><i class="fa fa-comments-o"></i>View &amp;Comments</button>
 							</li>
 							<li>
+							
+							@if(\App\Statuslikes::where(['article_id'=>$article->article_id,'user_id'=>Auth::user()->id])->first())
+									{{-- {!! Form::open(array('url'=>'articles/likes')) !!}
+									{!! Form::hidden('unlikes',$article->article_id) !!}
+									<button class="btn btn-success btn-xs" type="submit"><i class="fa fa-thumbs-down " aria-hidden="true"></i>Unlike Suggest</button>
+									{!! Form::close() !!} --}}<button class="btn btn-success btn-xs" type="disable" disabled=""><i class="fa fa-thumbs-up " aria-hidden="true" ></i>Like Suggest</button>
 
-								{!! Form::open() !!}
-								{!! Form::hidden('like_status',$article->id) !!}
+							  @else
+								{!! Form::open(array('url'=>'articles/likes')) !!}
+								{!! Form::hidden('likes',$article->article_id) !!}
+								<button class="btn btn-success btn-xs" type="submit"><i class="fa fa-thumbs-up " aria-hidden="true"></i>Like Suggest</button>
 					 			{!! Form::close() !!}
-								<button class="btn btn-success btn-xs"><i class="fa fa-thumbs-up " aria-hidden="true"></i>Like Suggest</button>
+					 		@endif
+								
 								
 							</li>
+							<li>{{$comment_count}} Comments</li>
+							<li>{{$like_count}} Likes</li>
 						</ul>
 						<span class="pull-right">{{$article->post_on}}</span>
 			   	</div>

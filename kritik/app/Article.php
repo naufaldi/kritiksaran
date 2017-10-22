@@ -24,7 +24,12 @@ class Article extends Model
 
     public function comments()
     {
-        return $this->hasMany(Statuscomments::class);
+        return $this->hasMany('App\Statuscomments','article_id');
+    }
+
+    public function like()
+    {
+        return $this->hasMany('App\Statuslikes','article_id');
     }
 
     public function setLiveAttribute($value)

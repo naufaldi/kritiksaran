@@ -40,6 +40,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('articles','ArticleController');
 Route::post('articles/comments','ArticleController@comment');
+Route::post('articles/likes','ArticleController@likes');
 
 		
 });

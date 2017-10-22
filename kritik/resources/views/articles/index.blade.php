@@ -46,7 +46,11 @@
 		{!! view('articles/status_user',[
 
 			'article'=>$article,
-			'comments'=>App\Statuscomments::where('article_id',$article->article_id)->get()
+			'comments'	   =>App\Statuscomments::where('article_id',$article->article_id)->orderBy('id','DESC')->get(),
+
+			'comment_count'=>App\Statuscomments::where('article_id',$article->article_id)->count(),
+			'like_count'=>App\Statuslikes::where('article_id',$article->article_id)->count()
+
 
 		])!!}
 

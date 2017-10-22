@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Input;
 use Auth;
 use App\User;
 use App\Statuscomments;
+use App\Statuslikes;
 use DB;
 
 
@@ -104,24 +105,62 @@ class ArticleController extends Controller
             $selectedStatus = Article::find($status);
 
 
-            // $selectedStatus->comments()->create([
-
-            //     'comment_text'=>$commentBox,
-            //     'user_id'=>Auth::user()->id,
-            //     'article_id'=>$status
-
-            //     ]);
-
-
-             Statuscomments::create([
+            $selectedStatus->comments()->create([
 
                 'comment_text'=>$commentBox,
                 'user_id'=>Auth::user()->id,
                 'article_id'=>$status
 
                 ]);
+
+
+             // Statuscomments::create([
+
+             //    'comment_text'=>$commentBox,
+             //    'user_id'=>Auth::user()->id,
+             //    'article_id'=>$status
+
+             //    ]);
             
             return redirect('/articles');
+        }
+    }
+
+    public function likes()
+    {
+        if (Input::has('likes')) {
+            
+            $status = Input::get('likes');
+            $likes = Article::find($status);
+
+            $likes->like()->create([
+
+                
+                'user_id'=>Auth::user()->id,
+                'article_id'=>$status
+
+                ]);
+
+             return redirect('/articles');
+
+        }
+
+        if (Input::get('unlikes')) {
+            
+
+
+            $status = Input::get('unlikes');
+            $likes = Article::find($status);
+
+            $likes->like()->create([
+
+                
+                'user_id'=>Auth::user()->id,
+                'article_id'=>0
+
+                ]);
+
+             return $likes;
         }
     }
 

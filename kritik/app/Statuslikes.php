@@ -2,18 +2,17 @@
 
 namespace App;
 
-
 use Illuminate\Database\Eloquent\Model;
 
-class Statuscomments extends Model
+class Statuslikes extends Model
 {
     public $timestamps = true;
-    protected $table = 'status_comments';
+    protected $table = 'user_status_likes';
     protected $guarded = ['id'];
 
     protected $fillable = [
 
-    	'comment_text','user_id','article_id'
+    	'user_id','article_id'
 
 
     ];
@@ -21,6 +20,6 @@ class Statuscomments extends Model
 
     public function status()
     {
-    	return $this->hasOne('App\Article','article_id','id');
+    	return $this->hasOne('App\Article','article_id','like_id');
     }
 }
