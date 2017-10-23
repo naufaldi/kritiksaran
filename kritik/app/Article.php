@@ -15,7 +15,22 @@ class Article extends Model
 
     ];
 
-    protected $dates = ['post_on','deleted_at'];
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = 'article_id';
+
+    public $timestamps = true;
+    protected $table = 'articles';
+    // protected $guarded = ['article_id'];
+
+    public function comments()
+    {
+        return $this->hasMany('App\Statuscomments','article_id');
+    }
+
+    public function like()
+    {
+        return $this->hasMany('App\Statuslikes','article_id');
+    }
 
     public function setLiveAttribute($value)
     {
@@ -27,8 +42,9 @@ class Article extends Model
     	 return substr($this->content,0,random_int(60,150)).'...';
     }
 
-    public function setPostOnAttribute($value)
-    {
-        $this->attributes['post_on'] = Carbon::parse($value);
-    }
+    // public function setPostOnAttribute($value)
+    // {
+    //     $this->attributes['post_on'] = Carbon::parse($value);
+    // }
 }
+

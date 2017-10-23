@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Article;
+use Illuminate\Support\Facades\Input;
 
-use App\Tes;
+
 
 use Auth;
-
+use App\User;
+use App\Statuscomments;
+use App\Statuslikes;
 use DB;
 
 
@@ -27,11 +30,24 @@ class ArticleController extends Controller
          //return Tes::all();
         //$tes = Tes::all();
        // $articles = DB::table('articles');
-        $articles = Article::orderBy('id','desc')->paginate(10);
+        $id_user = Auth::id();
+        $article_id = Article::all(['article_id']); 
+        $fotos =   User::findOrFail($id_user);
+        $articles = Article::orderBy('article_id','desc')->paginate(10);
+
+
+        
+
+       
+        
+        // $comments = Statuscomments::where('article_id',502)->get();
        // $articles = Article::onlyTrashed()->paginate(10); //untuk menampilkan artikel yang sudah dihapus
        // $articles = Article::all();
          //$articles = DB::table('articles')->get();
-        return view('articles.index',compact('articles'));
+        $tanggal = date('l jS \of F Y h:i:s A');
+         return view('articles.index',compact('articles','fotos','tanggal'));
+        //return $article_id;
+         
     }
 
     /**
@@ -58,7 +74,7 @@ class ArticleController extends Controller
         // $article->content = $request->content;
         // $article->post_on = $request->post_on;
         // $article->live = (boolean)$request->live;
- $create= Article::create($request->all());
+        $create= Article::create($request->all());
 
         if ($create) {
             
@@ -79,6 +95,75 @@ class ArticleController extends Controller
 
     }
 
+
+    public function comment(Request $request)
+    {
+        if (Input::has('post_comment')) {
+            
+            $status = Input::get('post_comment');
+            $commentBox = Input::get('comment_text');
+            $selectedStatus = Article::find($status);
+
+
+            $selectedStatus->comments()->create([
+
+                'comment_text'=>$commentBox,
+                'user_id'=>Auth::user()->id,
+                'article_id'=>$status
+
+                ]);
+
+
+             // Statuscomments::create([
+
+             //    'comment_text'=>$commentBox,
+             //    'user_id'=>Auth::user()->id,
+             //    'article_id'=>$status
+
+             //    ]);
+            
+            return redirect('/articles');
+        }
+    }
+
+    public function likes()
+    {
+        if (Input::has('likes')) {
+            
+            $status = Input::get('likes');
+            $likes = Article::find($status);
+
+            $likes->like()->create([
+
+                
+                'user_id'=>Auth::user()->id,
+                'article_id'=>$status
+
+                ]);
+
+             return redirect('/articles');
+
+        }
+
+        if (Input::get('unlikes')) {
+            
+
+
+            $status = Input::get('unlikes');
+            $likes = Article::find($status);
+
+            $likes->like()->create([
+
+                
+                'user_id'=>Auth::user()->id,
+                'article_id'=>0
+
+                ]);
+
+             return $likes;
+        }
+    }
+
     /**
      * Display the specified resource.
      *
@@ -86,8 +171,9 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $article = Article::findOrFail($id);
+    {   
+        
+        $article = Article::where('article_id',$id)->first();//filter unutuks spesifi kolom
         return view('articles.show',compact('article'));
     }
 
@@ -99,7 +185,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {   
-        $article = Article::findOrFail($id);
+        $article = Article::find($id);
        return view('articles.edit',compact('article'));
     }
 
@@ -114,18 +200,19 @@ class ArticleController extends Controller
     {
 
         $article = Article::findOrFail($id);
-        if(!isset($request->live))
-             $article->update(array_merge($request->all(),['live'=>false]));
+        if(isset($request->live))
+             $article->update(array_merge($request->all(),['live'=>1]));
         
 
         else
-            $article->update($request->all());
+            $article->update(array_merge($request->all(),['live'=>0]));
         
        
         return redirect('/articles');
 
 
     }
+
 
     /**
      * Remove the specified resource from storage.
