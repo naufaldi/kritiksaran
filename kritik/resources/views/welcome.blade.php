@@ -68,7 +68,6 @@
             <ol class="carousel-indicators slider_indicators">
                 <li data-target="#image_carousel_1" data-slide-to="0" class="active"></li>
                 <li data-target="#image_carousel_1" data-slide-to="1"></li>
-                <li data-target="#image_carousel_1" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
@@ -155,8 +154,8 @@
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="about_right wow slideInRight" data-wow-delay="0.3s">
-                        <img id="right_img_1" src="images/about/about-image.png" alt="" />
-                        <img id="right_img_2" src="images/about/about-image-2.png" alt="" />
+                        <img id="right_img_1" src="{{url('landing-page/images/about/about-image.png')}}" alt="" />
+                        <img id="right_img_2" src="{{url('landing-page/images/about/about-image-2.png')}}" alt="" />
                     </div>
                 </div>
             </div>
@@ -212,7 +211,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="about_right amazing_text wow fadeInUp animated text-center">
-                        <img src="images/amazing.png" alt="" />
+                        <img src="{{URL('landing-page/images/amazing.png')}}" alt="" />
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -249,11 +248,11 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-8 col-text-center text-center">
                         <ol class="carousel-indicators testimonials_indicators">
-                            <li data-target="#fawesome_carousel_3" data-slide-to="0" class="active"><img src="images/client/client-1.png" alt="" /></li>
-                            <li data-target="#fawesome_carousel_3" data-slide-to="1"><img src="images/client/client-2.png" alt="" /></li>
-                            <li data-target="#fawesome_carousel_3" data-slide-to="2"><img src="images/client/client-3.png" alt="" /></li>
-                            <li data-target="#fawesome_carousel_3" data-slide-to="3"><img src="images/client/client-4.png" alt="" /></li>
-                            <li data-target="#fawesome_carousel_3" data-slide-to="4"><img src="images/client/client-5.png" alt="" /></li>
+                            <li data-target="#fawesome_carousel_3" data-slide-to="0" class="active"><img src="{{url('landing-page/images/client/client-1.png')}}" alt="" /></li>
+                            <li data-target="#fawesome_carousel_3" data-slide-to="1"><img src="{{url('landing-page/images/client/client-2.png')}}" alt="" /></li>
+                            <li data-target="#fawesome_carousel_3" data-slide-to="2"><img src="{{url('landing-page/images/client/client-3.png')}}" alt="" /></li>
+                            <li data-target="#fawesome_carousel_3" data-slide-to="3"><img src="{{url('landing-page/images/client/client-4.png')}}" alt="" /></li>
+                            <li data-target="#fawesome_carousel_3" data-slide-to="4"><img src="{{url('landing-page/images/client/client-5.png')}}" alt="" /></li>
                         </ol>
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
@@ -306,22 +305,22 @@
             <div class="row">
                 <div id="owl-demo" class="owl-carousel owl-theme">
                     <div class="item">
-                        <img src="images/screenshot/screenshot-4.png" alt="Screenshot Image">
+                        <img src="{{url('landing-page/images/screenshot/screenshot-4.png')}}" alt="Screenshot Image">
                     </div>
                     <div class="item">
-                        <img src="images/screenshot/screenshot-6.png" alt="Screenshot Image">
+                        <img src="{{url('landing-page/images/screenshot/screenshot-6.png')}}" alt="Screenshot Image">
                     </div>
                     <div class="item">
-                        <img src="images/screenshot/screenshot-5.png" alt="Screenshot Image">
+                        <img src="{{url('landing-page/images/screenshot/screenshot-5.png')}}" alt="Screenshot Image">
                     </div>
                     <div class="item">
-                        <img src="images/screenshot/screenshot-1.png" alt="Screenshot Image">
+                        <img src="{{url('landing-page/images/screenshot/screenshot-1.png')}}" alt="Screenshot Image">
                     </div>
                     <div class="item">
-                        <img src="images/screenshot/screenshot-2.png" alt="Screenshot Image">
+                        <img src="{{url('landing-page/images/screenshot/screenshot-2.png')}}" alt="Screenshot Image">
                     </div>
                     <div class="item">
-                        <img src="images/screenshot/screenshot-3.png" alt="Screenshot Image">
+                        <img src="{{url('landing-page/images/screenshot/screenshot-3.png')}}" alt="Screenshot Image">
                     </div>
                 </div>
                 <div class="customNavigation">
@@ -344,7 +343,7 @@
                 <div class="col-sm-4">
                     <div class="single_blog wow fadeInLeft" data-wow-delay="0.3s">
                         <div class="blog_img">
-                            <a href="#"><img src="images/developer/roihan.jpg" alt="" /></a>
+                            <a href="#"><img src="{{url('landing-page/images/developer/roihan.jpg')}}" alt="" /></a>
                         </div>
                         <div class="blog_text">
                             <h4>Ahmad Roihan</h4>
@@ -354,7 +353,7 @@
                     </div>
                     <div class="single_blog wow fadeInLeft" data-wow-delay="0.3s">
                         <div class="blog_img">
-                            <a href="#"><img src="images/blog/blog-post2.png" alt="" /></a>
+                            <a href="#"><img src="{{url('landing-page/images/blog/blog-post2.png')}}" alt="" /></a>
                         </div>
                         <div class="blog_text">
                             <h4>Single Image Post</h4>
@@ -366,7 +365,7 @@
                 <div class="col-sm-4">
                     <div class="single_blog wow fadeInUp" data-wow-delay="0.3s">
                         <div class="blog_img">
-                            <a href="#"><img src="images/blog/blog-post3.png" alt="" /></a>
+                            <a href="#"><img src="{{url('landing-page/images/blog/blog-post3.png')}}" alt="" /></a>
                         </div>
                         <div class="blog_text">
                             <h4>Single Image Post</h4>
@@ -376,7 +375,7 @@
                     </div>
                     <div class="single_blog wow fadeInUp" data-wow-delay="0.3s">
                         <div class="blog_img">
-                            <a href="#"><img src="images/blog/blog-post4.png" alt="" /></a>
+                            <a href="#"><img src="{{url('landing-page/images/blog/blog-post4.png')}}" alt="" /></a>
                         </div>
                         <div class="blog_text">
                             <h4>Single Image Post</h4>
@@ -388,7 +387,7 @@
                 <div class="col-sm-4">
                     <div class="single_blog wow fadeInRight" data-wow-delay="0.3s">
                         <div class="blog_img">
-                            <a href="#"><img src="images/blog/blog-post5.png" alt="" /></a>
+                            <a href="#"><img src="{{url('landing-page/images/blog/blog-post5.png')}}" alt="" /></a>
                         </div>
                         <div class="blog_text">
                             <h4>Single Image Post</h4>
@@ -398,7 +397,7 @@
                     </div>
                     <div class="single_blog wow fadeInRight" data-wow-delay="0.3s">
                         <div class="blog_img">
-                            <a href="#"><img src="images/blog/blog-post6.png" alt="" /></a>
+                            <a href="#"><img src="{{url('landing-page/images/blog/blog-post6.png')}}" alt="" /></a>
                         </div>
                         <div class="blog_text">
                             <h4>Single Image Post</h4>

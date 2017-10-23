@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
  <style>
  		
@@ -27,7 +27,7 @@
 					<h5>{{$user->email}}</h5>
 					<h5>{{$user->dob}}</h5>
 
-						<button class="btn btn-primary">Follow</button>
+					<button class="btn btn-primary">Follow</button>
 
 				</div>
 

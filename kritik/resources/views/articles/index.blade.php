@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
 
 <div class="row">
   {{-- {!!Form::text('nama_lengkap',null,['class'=>'form-controll'])!!} --}}
-<div class="col-md-6 col-md-offset-3"> 
+<div class="col-md-8 col-md-offset-2"> 
 {!! Form::open() !!}
 <div class="panel panel-info">
 <div class="panel-heading"> Add New Suggest</div>
