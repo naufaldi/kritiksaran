@@ -45,7 +45,7 @@
               <div class="menu_section">
                 <h3>Menu</h3>
                 <ul class="nav side-menu">
-                  <li><a href="/articles/create"><i class="fa fa-edit"></i> Create Post </a></li>
+                 
                   <li><a href="/articles"><i class="fa fa-home"></i> Feed </a></li>
                 </ul>
               </div>

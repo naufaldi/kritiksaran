@@ -17,9 +17,26 @@
 						</div>
 						
 						<div class="col-md-8">
+						<p>{{$article->ShortContent}}</p>
 						<br>
 						
-						<p>{{$article->ShortContent}}</p>
+						
+
+						@if($article->type==1)
+					   
+                        	
+                          		<div class="image view view-first">
+                            
+                            		<img src="{{asset('images/'.$article->image_url)}}" style="width: 100%; display: block;"  alt="">
+                            	<div class="mask">
+                              		<p>{{$article->ShortContent}}</p>
+                             
+                            	</div>
+                          		</div>
+	                          
+								
+
+						@endif
 
 				 		<a href="/articles/{{$article->article_id}}">Read More</a>	
 					    </div>
@@ -31,17 +48,19 @@
 								<button type="submit" class="btn btn-success btn-xs"data-toggle="collapse" data-target="#view-comments-{{$article->article_id}}" aria-expanded="false" aria-controls="view-comments-{{$article->article_id}}"><i class="fa fa-comments-o"></i>View &amp;Comments</button>
 							</li>
 							<li>
-							
+							<br>
 							@if(\App\Statuslikes::where(['article_id'=>$article->article_id,'user_id'=>Auth::user()->id])->first())
-									{{-- {!! Form::open(array('url'=>'articles/likes')) !!}
-									{!! Form::hidden('unlikes',$article->article_id) !!}
-									<button class="btn btn-success btn-xs" type="submit"><i class="fa fa-thumbs-down " aria-hidden="true"></i>Unlike Suggest</button>
-									{!! Form::close() !!} --}}<button class="btn btn-success btn-xs" type="disable" disabled=""><i class="fa fa-thumbs-up " aria-hidden="true" ></i>Like Suggest</button>
+									<button class="btn btn-success btn-xs" type="disable" disabled=""><i class="fa fa-thumbs-up " aria-hidden="true" ></i>Like Suggest</button>
 
 							  @else
+
+
 								{!! Form::open(array('url'=>'articles/likes')) !!}
-								{!! Form::hidden('likes',$article->article_id) !!}
+								
+
 								<button class="btn btn-success btn-xs" type="submit"><i class="fa fa-thumbs-up " aria-hidden="true"></i>Like Suggest</button>
+								{!! Form::hidden('likes',$article->article_id) !!}
+
 					 			{!! Form::close() !!}
 					 		@endif
 								

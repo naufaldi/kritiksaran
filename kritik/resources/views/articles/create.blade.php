@@ -35,7 +35,7 @@
 						 <div class="form-group">
 						 	
 							<label for="post_on">Post On</label>
-							<input type="datetime-local" name="post_on" class="form-control">
+							<input type="hidden" name="post_on" class="form-control" value="{{$tanggal}}">
 
 
 

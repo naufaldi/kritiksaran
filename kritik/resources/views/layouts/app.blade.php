@@ -12,8 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/myscript.css') }}">
+
 
     <link rel="stylesheet" href="{{ asset('css/fa/css/font-awesome.min.css') }}">
+
 
     <script type="text/javascript" src="{{ asset('js/jquery-3.2.1.min.js/font-awesome.min.css') }}"></script>
 

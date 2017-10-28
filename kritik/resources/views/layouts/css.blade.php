@@ -6,6 +6,7 @@
 <link href="{{url('admin/vendors/nprogress/nprogress.css" rel="stylesheet')}}">
 <!-- iCheck -->
 <link href="{{url('admin/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
+<link href="{{url('css/myscript.css')}}" rel="stylesheet">
 
 <!-- bootstrap-progressbar -->
 <link href="{{url('admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet">

@@ -18,6 +18,8 @@ class CreatePostsTable extends Migration
             $table->increments('article_id');
             $table->integer('user_id');
             $table->text('content');
+            $table->text('image_url');
+            $table->integer('type');
             $table->softDeletes();
             $table->timestamps();
         });

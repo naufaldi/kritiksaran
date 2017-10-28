@@ -5,7 +5,7 @@
 <div class="row">
   {{-- {!!Form::text('nama_lengkap',null,['class'=>'form-controll'])!!} --}}
 <div class="col-md-8 col-md-offset-2"> 
-{!! Form::open() !!}
+{!! Form::open(['files'=>true]) !!}
 <div class="panel panel-info">
 <div class="panel-heading"> Add New Suggest</div>
   <div class="panel-body">
@@ -31,7 +31,14 @@
 
   </div>
 	<div class="panel-footer clearfix">
-		<button type="submit" value="Post" class="btn btn-success pull-right btn-sm"><i class="fa fa-plus"></i>Add Suggest</button>
+	<div class="col-md-6">
+		<label for="" class="custom-fle-upload">
+			<i class="fa fa-image"></i>
+		</label>
+
+		<input name="gambar" id="file-upload" type="file"/>
+	</div>
+		<button type="submit" name="post" value="Post" class="btn btn-success pull-right btn-sm"><i class="fa fa-plus"></i>Add Suggest</button>
 	</div>
 	
 	{{-- </form> --}}

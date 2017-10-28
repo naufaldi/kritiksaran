@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Article;
 use Illuminate\Support\Facades\Input;
-
+use Illuminate\Support\Facades\Validator;
 
 
 use Auth;
@@ -74,11 +74,60 @@ class ArticleController extends Controller
         // $article->content = $request->content;
         // $article->post_on = $request->post_on;
         // $article->live = (boolean)$request->live;
-        $create= Article::create($request->all());
+        // $create= Article::create($request->all());
 
-        if ($create) {
+
+        if (Input::has('content')) {
             
-            return $this->index();
+            $text = e(Input::get('content'));
+
+            $rule = [
+
+                'content' => 'required|string',
+
+            ];
+
+            $validator = Validator::make($request->all(),$rule);
+
+            if (Input::hasFile('gambar')) {
+            
+                $rule['gambar']='image';
+                $validator =Validator::make($request->all(),$rule);
+
+                if (!$validator->fails()) {
+                    $image = $request->file('gambar');
+                   // $imageName = $image->getFileName();
+                    $imageName = str_random(8).'_'.$image->getClientOriginalName();
+
+                    $image->move('images',$imageName);
+
+                    $userStatus = new Article();
+                    $userStatus->content = $request->content;
+                    $userStatus->image_url = $imageName;
+                    $userStatus->user_id = Auth::user()->id;
+                    $userStatus->post_on = $request->post_on;
+                    $userStatus->type = 1;
+                    $userStatus->live = (boolean)$request->live;
+                    $userStatus->save();
+
+                  return redirect('/articles');
+
+
+
+                }else{
+                    return back()->with('error','Validation failed  :'.$validator->errors);
+                }
+          }
+
+                    $userStatus = new Article();
+                    $userStatus->content = $text;                  
+                    $userStatus->user_id = Auth::user()->id;
+                    $userStatus->post_on = $request->post_on;                  
+                    $userStatus->live = (boolean)$request->live;
+                    $userStatus->save();
+
+            return redirect('/articles'); 
+            
         }
         else{
              echo "Error";
@@ -94,6 +143,7 @@ class ArticleController extends Controller
         //     ]);
 
     }
+
 
 
     public function comment(Request $request)
