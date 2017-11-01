@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="{{ url('admin/img/img.jpg') }}">
+    <link rel="icon" href="{{ url('admins/img/img.jpg') }}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -29,7 +29,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="{{url('admin/img/img.jpg')}}" alt="..." class="img-circle profile_img">
+                <img src="{{url('admins/img/img.jpg')}}" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -66,7 +66,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{url('admin/img/img.jpg')}}" alt="">{{Auth::user()->name}}
+                    <img src="{{url('admins/img/img.jpg')}}" alt="">{{Auth::user()->name}}
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

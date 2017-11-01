@@ -18,13 +18,13 @@ class KajurMiddleware
     {
         foreach (Auth::user()->role as $role) {
             
-            if ($role->name == 'Ketua Jurusan') {
+            if ($role->name == 'kajur') {
                 
                 return $next($request);
             }
         }
 
-    return redirect('');
+    return redirect('/');
         
     }
 }

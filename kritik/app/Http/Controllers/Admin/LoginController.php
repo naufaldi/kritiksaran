@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -44,10 +45,10 @@ class LoginController extends Controller
         $this->clearLoginAttempts($request);
 
         foreach ($this->guard()->user()->role as $role) {
-            if ($role->name == 'Admin TI') {
+            if ($role->name == 'admin') {
                 
                 return redirect('admin/home');
-            } elseif ($role->name == 'Ketua Jurusan') {
+            } elseif ($role->name == 'kajur') {
                 
                 return redirect('admin/kajur');
             }
