@@ -10,7 +10,7 @@
 				</div>
 				
 
-				<div class="panel-body">
+				<div class="panel-body" id="panel">
 					<div class="row">
 						<div class="col-md-2">
 							<img src="{{"https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=mm"}}" alt="" class="img-responsive">
@@ -50,7 +50,7 @@
 							<li>
 							<br>
 							@if(\App\Statuslikes::where(['article_id'=>$article->article_id,'user_id'=>Auth::user()->id])->first())
-									<button class="btn btn-success btn-xs" type="disable" disabled=""><i class="fa fa-thumbs-up " aria-hidden="true" ></i>Like Suggest</button>
+									<button class="btn btn-success btn-xs" type="disable" disabled="" onclick="like()"><i class="fa fa-thumbs-up " aria-hidden="true" ></i>Like Suggest</button>
 
 							  @else
 
@@ -58,8 +58,8 @@
 								{!! Form::open(array('url'=>'articles/likes')) !!}
 								
 
-								<button class="btn btn-success btn-xs" type="submit"><i class="fa fa-thumbs-up " aria-hidden="true"></i>Like Suggest</button>
-								{!! Form::hidden('likes',$article->article_id) !!}
+								<button class="btn btn-success btn-xs" onclick="like()" type="submit"><i class="fa fa-thumbs-up " aria-hidden="true"></i>Like Suggest</button>
+								{!! Form::hidden('likes',$article->article_id,['id'=>'id']) !!}
 
 					 			{!! Form::close() !!}
 					 		@endif

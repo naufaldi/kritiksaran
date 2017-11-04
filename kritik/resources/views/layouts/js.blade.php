@@ -38,5 +38,48 @@
 
 <!-- Custom Theme Scripts -->
 <script src="{{url('admins/build/js/custom.min.js')}}"></script>
+<script type = "text/javascript">
+	
+	  function like() {
+        save_method = "like";
+        $('input[name=_method').val('POST');
+       
+      }
+
+		$(function () {
+        $('#panel').validator().on('submit',function (e) {
+
+          if (!e.isDefaultPrevented()) {
+
+            var id = $('#id').val();
+            if (save_method =="like") 
+
+              url="{{ url('contact') }}";
+            
+            else
+              url ="{{ url('contact').'/' }}"+id;
+            
+            $.ajax({
+
+                url:url,
+                type:"POST",
+                data:$('#panel').serialize(),
+                success:function($data){
+
+                  reload();
+
+                },
+                error:function(){
+                  alert('Terjadi Error');
+                }
+            });
+            return false;
+          }
+          
+        });
+      });
+
+
+</script>
 
 
