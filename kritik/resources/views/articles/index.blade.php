@@ -4,11 +4,11 @@
 
 <div class="row">
   {{-- {!!Form::text('nama_lengkap',null,['class'=>'form-controll'])!!} --}}
-<div class="col-md-8 col-md-offset-2"> 
+<div class="col-md-8 col-md-offset-2" id="status">
 {!! Form::open(['files'=>true]) !!}
 <div class="panel panel-info">
 <div class="panel-heading"> Add New Suggest</div>
-  <div class="panel-body">
+  <div class="panel-body" >
   	<label>Write your suggest</label>
   {{-- <form action="/articles" method="POST">
    {{csrf_field()}} --}}
@@ -17,13 +17,13 @@
   	<textarea class="form-control" name="content" id="content"></textarea>
   	<div class="checkbox">
 		<label>
-			<input type="checkbox" name="live" >For Public</label>
+			<input type="checkbox" name="live" id="live">For Public</label>
 	</div>
 
 	<div class="form-group">
 				{{-- <input type="hidden" name="article_id" value={{rand(1,1000)}}> --}}
 		
-				<input type="hidden" name="post_on" class="form-control" value="{{$tanggal}}">
+				<input type="hidden" name="post_on" class="form-control" value="{{$tanggal}}" id="post_on">
 	</div>
 
 
@@ -38,14 +38,16 @@
 
 		<input name="gambar" id="file-upload" type="file"/>
 	</div>
-		<button type="submit" name="post" value="Post" class="btn btn-success pull-right btn-sm"><i class="fa fa-plus"></i>Add Suggest</button>
+
+
+		<button type="submit" onclick="create()" name="post" value="Post" class="btn btn-success pull-right btn-sm"><i class="fa fa-plus"></i>Add Suggest</button>
 	</div>
 	
 	{{-- </form> --}}
   </div>
   {!! Form::close() !!}
  </div>
-  
+
 
 
 	@forelse($articles as $article )

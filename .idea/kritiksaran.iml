@@ -16,5 +16,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="LARAVEL" />
+    <orderEntry type="module" module-name="ajax" />
   </component>
 </module>

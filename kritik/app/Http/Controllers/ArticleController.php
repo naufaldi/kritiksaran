@@ -176,24 +176,24 @@ class ArticleController extends Controller
         }
     }
 
-    public function likes()
+    public function likes($id)
     {
-        if (Input::has('likes')) {
+
             
-            $status = Input::get('likes');
-            $likes = Article::find($status);
+//            $status = Input::get('likes');
+            $likes = Article::find($id);
 
             $likes->like()->create([
 
                 
                 'user_id'=>Auth::user()->id,
-                'article_id'=>$status
+                'article_id'=>$id
 
                 ]);
 
              return redirect('/articles');
 
-        }
+
 
         if (Input::get('unlikes')) {
             

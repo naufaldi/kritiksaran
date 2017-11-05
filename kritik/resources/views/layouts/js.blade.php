@@ -37,47 +37,113 @@
 <script src="{{url('admins/vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="{{url('admins/build/js/custom.min.js')}}"></script>
+{{--<script src="{{url('admins/build/js/custom.min.js')}}"></script>--}}
+<script src="{{url('js/sweetalert/dist/sweetalert.min.js')}}"></script>
+
+
+
 <script type = "text/javascript">
-	
-	  function like() {
-        save_method = "like";
-        $('input[name=_method').val('POST');
-       
-      }
 
-		$(function () {
-        $('#panel').validator().on('submit',function (e) {
+    function like(id){
 
-          if (!e.isDefaultPrevented()) {
+        var csrf =  $('meta[name="csrf-token"]').attr('content');
 
-            var id = $('#id').val();
-            if (save_method =="like") 
-
-              url="{{ url('contact') }}";
-            
-            else
-              url ="{{ url('contact').'/' }}"+id;
-            
             $.ajax({
 
-                url:url,
+                url:"{{ url('articles/likes') }}"+'/'+id,
                 type:"POST",
-                data:$('#panel').serialize(),
+                data:{'_method':'POST','_token':csrf},
                 success:function($data){
-
-                  reload();
+                    $('#contain').load(document.URL +  ' #contain');
 
                 },
                 error:function(){
-                  alert('Terjadi Error');
+                    swal("Error Bro")
                 }
             });
-            return false;
-          }
-          
+            //return false;
+
+    }
+
+    function create() {
+
+        $('#status form').submit(function(e) {
+
+            var url = "path/to/your/script.php"; // the script where you handle the form input.
+
+            $.ajax({
+
+                url:"{{ url('articles') }}",
+                type:"POST",
+                data:$('#status form').serialize(),
+                success:function(data){
+                    $('#contain').load(document.URL +  ' #contain');
+                    swal({
+
+                        text:'Saran Terkirim',
+                        icon:'success',
+                        timer:'1500'
+                    })
+                },
+                error:function(){
+
+                    swal("Error Bro")
+                }
+            });
+
+            e.preventDefault(); // avoid to execute the actual submit of the form.
         });
-      });
+
+
+
+    }
+    
+    function comment() {
+        
+    }
+
+
+    function deleteData(id){
+        var csrf =  $('meta[name="csrf-token"]').attr('content');
+
+
+        swal({
+
+            title:'Yakin?',
+            text:"Menghapus data?",
+            type:"warning",
+            showCancelButton:true,
+            cancelBuuttonColor:"#d33",
+            confirmButtonColor:"#308506",
+            confirmButtonText:"Ya, Hapus data"
+
+        }).then(function(){
+            $.ajax({
+                url:"{{url('articles')}}"+'/'+id,
+                type:"POST",
+                data:{'_method':'DELETE','_token':csrf},
+                cache:false,
+                success:function(data){
+                    $('#contain').load(document.URL +  ' #contain');
+
+                    swal({
+                        title:'Success',
+                        text:'Data Terhapus',
+                        icon:'success',
+                        timer:'1500'
+                    })
+                },
+                error:function(){
+                    swal({
+                        title:'Fail',
+                        text:'Data Gagal Terhapus',
+                        icon:'error',
+                        timer:'1500'
+                    })
+                }
+            });
+        });
+    }
 
 
 </script>
