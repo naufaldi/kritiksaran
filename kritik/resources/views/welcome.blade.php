@@ -114,8 +114,8 @@
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="about_title section-title wow slideInLeft" data-wow-delay="0.3s">
-                        <h1>Passionate About and Smart Desing</h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <h1>Melayani dan Menampung Aspirasi Masyarakat Informatika</h1>
+                        <p>Kami hadir untuk menjadi wadah atau media penyampaian informasi terkait saran, kritik atau masukkan untuk bersama membangun Jurusan Teknik Informatika lebih maju dan berkualitas.</p>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
@@ -123,15 +123,15 @@
                                 <div class="about_icon">
                                     <i class="fa fa-eye"></i>
                                 </div>
-                                <a href="#"><h3>Retina Ready</h3></a>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a href="#"><h3>Rela Time Sistem</h3></a>
+                                <p>Sistem cepat tanggap dalam menyalurkan informasi dan menampilkan informasi</p>
                             </div>
                             <div class="about_text wow flipInY" data-wow-delay="0.6s">
                                 <div class="about_icon">
                                     <i class="fa fa-bar-chart"></i>
                                 </div>
-                                <a href="#"><h3>Coutom menus</h3></a>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a href="#"><h3>Good Quality</h3></a>
+                                <p>Sistem yang kita bangun memiliki kapabilitas yang terjamin untuk skala besar</p>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -139,15 +139,15 @@
                                 <div class="about_icon">
                                     <i class="fa fa-pencil"></i>
                                 </div>
-                                <a href="#"><h3>Easy to customize</h3></a>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a href="#"><h3>Easy to Use</h3></a>
+                                <p>Sistem yang kita buat memudahkan pengguna dalam menggunakannya </p>
                             </div>
                             <div class="about_text wow flipInY" data-wow-delay="0.6s">
                                 <div class="about_icon">
                                     <i class="fa fa-dot-circle-o"></i>
                                 </div>
-                                <a href="#"><h3>Custom Pages</h3></a>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a href="#"><h3>Friendly System</h3></a>
+                                <p>Sistem kritik saran memiliki tampilan yang baik dan bagus dengan desain yang elegan</p>
                             </div>
                         </div>
                     </div>
